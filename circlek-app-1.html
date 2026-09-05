@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Circle K International — West Valley College</title>
+<meta name="description" content="Sign up for the new Circle K International chapter at West Valley College — a student-led volunteer and community service organization.">
+<meta name="theme-color" content="#101A33">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#101A33;
+  --navy-deep:#0A1225;
+  --navy-soft:#1A2749;
+  --cream:#F7F4ED;
+  --cream-dim:#DFDACE;
+  --brass:#C8A45C;
+  --brass-lit:#E0BE7A;
+  --ink:#1B2440;
+  --body:#3E4A63;
+  --muted:#77839C;
+  --line:#E2DDD2;
+  --danger:#B4442F;
+}
+
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{margin:0;font-weight:400;}
+.serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400;letter-spacing:-0.01em;}
+
+.screen{display:none;}
+.screen.active{display:block;animation:fade .45s ease both;}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+/* ─────────── LANDING ─────────── */
+.hero{
+  min-height:100svh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;
+  padding:52px 26px 44px;
+  background:var(--navy);
+  position:relative;overflow:hidden;
+}
+/* engraved arc texture — subtle, collegiate, not glowy */
+.hero::before{
+  content:"";position:absolute;inset:-25% -35%;
+  background:
+    repeating-radial-gradient(circle at 50% 42%,
+      transparent 0 58px,
+      rgba(200,164,92,0.055) 58px 59px);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:38%;
+  background:linear-gradient(to bottom,transparent,rgba(10,18,37,0.85));
+  pointer-events:none;
+}
+.hero > *{position:relative;z-index:2;}
+
+.seal{
+  width:78px;height:78px;border-radius:50%;
+  border:1.5px solid var(--brass);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;margin-bottom:30px;
+  animation:seal-in .8s cubic-bezier(.2,.85,.3,1) both;
+}
+.seal::before{
+  content:"";position:absolute;inset:6px;border-radius:50%;
+  border:1px solid rgba(200,164,92,0.35);
+}
+.seal span{
+  font-family:'Instrument Serif',serif;font-size:2.3rem;
+  color:var(--brass-lit);line-height:1;transform:translateY(2px);
+}
+
+.est{
+  font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--brass);margin:0 0 22px;
+  animation:up .7s .1s cubic-bezier(.2,.85,.3,1) both;
+}
+
+.title{
+  color:var(--cream);
+  font-size:clamp(2.9rem,14vw,4.6rem);
+  line-height:0.98;
+  animation:up .75s .18s cubic-bezier(.2,.85,.3,1) both;
+}
+.title em{
+  display:block;font-style:italic;color:var(--brass-lit);
+}
+
+.college{
+  margin:22px 0 0;
+  font-size:0.82rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--cream-dim);
+  animation:up .75s .26s cubic-bezier(.2,.85,.3,1) both;
+}
+
+.divider{
+  display:flex;align-items:center;gap:12px;
+  margin:30px 0 26px;color:var(--brass);
+  animation:up .75s .32s cubic-bezier(.2,.85,.3,1) both;
+}
+.divider i{display:block;width:46px;height:1px;background:rgba(200,164,92,0.5);}
+.divider b{width:4px;height:4px;background:var(--brass);transform:rotate(45deg);}
+
+.points{
+  list-style:none;padding:0;margin:0;
+  display:grid;gap:11px;text-align:left;
+  animation:up .75s .38s cubic-bezier(.2,.85,.3,1) both;
+}
+.points li{
+  display:flex;align-items:center;gap:13px;
+  color:var(--cream);font-size:1.05rem;
+}
+.points i{
+  width:5px;height:5px;background:var(--brass);
+  transform:rotate(45deg);flex-shrink:0;
+}
+
+.enter{
+  margin-top:38px;
+  display:inline-flex;align-items:center;gap:11px;
+  background:var(--cream);color:var(--navy);
+  font-size:1rem;font-weight:600;letter-spacing:0.01em;
+  text-decoration:none;border:none;cursor:pointer;
+  font-family:inherit;
+  padding:16px 34px;border-radius:2px;
+  transition:background .18s ease,transform .18s ease;
+  animation:up .75s .46s cubic-bezier(.2,.85,.3,1) both;
+}
+.enter:hover{background:var(--brass-lit);transform:translateY(-2px);}
+.enter svg{transition:transform .18s ease;}
+.enter:hover svg{transform:translateX(4px);}
+
+.founders{
+  margin-top:20px;font-size:0.82rem;color:var(--muted);
+  animation:up .75s .52s cubic-bezier(.2,.85,.3,1) both;
+}
+
+@keyframes up{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+@keyframes seal-in{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:none}}
+
+/* ─────────── INNER ─────────── */
+.bar{
+  background:var(--navy);border-bottom:1px solid rgba(200,164,92,0.25);
+}
+.bar .in{
+  max-width:600px;margin:0 auto;padding:14px 24px;
+  display:flex;align-items:center;gap:12px;
+}
+.seal-sm{
+  width:34px;height:34px;border-radius:50%;
+  border:1px solid var(--brass);color:var(--brass-lit);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Instrument Serif',serif;font-size:1.15rem;flex-shrink:0;
+}
+.bar .nm{color:var(--cream);font-size:0.94rem;font-weight:600;line-height:1.25;}
+.bar .sub{color:var(--muted);font-size:0.76rem;letter-spacing:0.1em;text-transform:uppercase;}
+.back{
+  margin-left:auto;background:none;border:none;cursor:pointer;
+  color:var(--cream-dim);font-family:inherit;font-size:0.85rem;padding:6px;
+}
+.back:hover{color:var(--brass-lit);}
+
+.page{max-width:600px;margin:0 auto;padding:38px 24px 60px;}
+
+.h-lead{font-size:2.6rem;line-height:1.06;}
+.p-lead{color:var(--body);margin:14px 0 0;font-size:1.02rem;}
+
+.perks{list-style:none;padding:0;margin:30px 0 34px;display:grid;gap:18px;}
+.perks li{display:flex;gap:14px;}
+.perks .n{
+  font-family:'Instrument Serif',serif;font-size:1.3rem;
+  color:var(--brass);line-height:1;padding-top:3px;min-width:22px;
+}
+.perks h3{font-size:1rem;font-weight:600;}
+.perks p{margin:3px 0 0;color:var(--body);font-size:0.92rem;}
+
+.panel{
+  background:var(--navy);color:var(--cream);
+  border-radius:3px;padding:26px;margin-bottom:32px;
+}
+.panel .lab{
+  font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--brass);margin-bottom:16px;
+}
+.mgrid{display:grid;gap:18px;margin:0;}
+@media(min-width:520px){.mgrid{grid-template-columns:1fr 1fr;}}
+.mgrid dt{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+.mgrid dd{margin:0;font-size:1rem;color:var(--cream);}
+.tbd{
+  display:inline-block;font-size:0.66rem;font-weight:600;letter-spacing:0.08em;
+  color:var(--navy);background:var(--brass);padding:2px 7px;border-radius:2px;
+  text-transform:uppercase;margin-left:3px;
+}
+.panel .note{margin:18px 0 0;font-size:0.85rem;color:var(--cream-dim);}
+
+/* form */
+.form-box{
+  background:#fff;border:1px solid var(--line);border-radius:3px;padding:26px;
+}
+.fld{margin-bottom:18px;}
+.two{display:grid;gap:0 16px;grid-template-columns:1fr 1fr;}
+label{display:block;font-size:0.85rem;font-weight:600;margin-bottom:7px;color:var(--ink);}
+label .op{font-weight:400;color:var(--muted);}
+input[type=text],input[type=email],input[type=tel],input[type=password],input[type=search],textarea{
+  width:100%;font-family:inherit;font-size:1rem;
+  padding:12px 14px;
+  background:#FCFBF8;border:1px solid var(--line);border-radius:2px;
+  color:var(--ink);outline:none;
+  transition:border-color .15s,box-shadow .15s;
+}
+input::placeholder,textarea::placeholder{color:#A9B0C0;}
+input:focus,textarea:focus{border-color:var(--brass);box-shadow:0 0 0 3px rgba(200,164,92,0.18);}
+input.bad{border-color:var(--danger);}
+.err{color:var(--danger);font-size:0.83rem;margin:6px 0 0;}
+.chk{display:flex;gap:11px;align-items:flex-start;}
+.chk input{width:auto;margin-top:4px;accent-color:var(--brass);}
+.chk label{font-weight:400;margin:0;font-size:0.92rem;}
+.alert{
+  background:#FBEDEA;border:1px solid #E8C4BB;color:var(--danger);
+  padding:12px 15px;border-radius:2px;font-size:0.88rem;margin-bottom:16px;
+}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:inherit;font-size:1rem;font-weight:600;
+  padding:15px 28px;border-radius:2px;border:none;cursor:pointer;
+  transition:background .16s ease;
+}
+.btn-main{background:var(--navy);color:var(--cream);width:100%;}
+.btn-main:hover{background:var(--navy-soft);}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line);}
+.btn-ghost:hover{background:#EFEBE1;}
+.btn:disabled{opacity:.55;cursor:not-allowed;}
+
+/* confirmation */
+.done-wrap{text-align:center;padding-top:56px;}
+.tick{
+  width:74px;height:74px;border-radius:50%;
+  border:1.5px solid var(--brass);color:var(--brass);
+  display:flex;align-items:center;justify-content:center;margin:0 auto;
+  animation:seal-in .6s cubic-bezier(.2,.85,.3,1) both;
+}
+
+.foot{border-top:1px solid var(--line);margin-top:44px;padding:26px 0 36px;}
+.foot p{margin:3px 0;font-size:0.82rem;color:var(--muted);}
+
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--brass);outline-offset:2px;
+}
+/* ─────────── OFFICER AREA ─────────── */
+.officer-link{
+  margin-top:26px;background:none;border:none;cursor:pointer;font-family:inherit;
+  font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(223,218,206,.42);padding:8px 10px;
+  animation:up .75s .58s cubic-bezier(.2,.85,.3,1) both;
+}
+.officer-link:hover{color:var(--brass);}
+
+.tabs{background:var(--navy-soft);border-bottom:1px solid rgba(200,164,92,.2);}
+.tabs .in{max-width:600px;margin:0 auto;padding:0 24px;display:flex;gap:2px;overflow-x:auto;}
+.tab{background:none;border:none;cursor:pointer;font-family:inherit;font-size:.86rem;
+  color:#A9B4CC;padding:12px 15px;white-space:nowrap;border-bottom:2px solid transparent;}
+.tab:hover{color:var(--cream);}
+.tab.on{color:var(--brass-lit);border-bottom-color:var(--brass);}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px;}
+.stat{background:#fff;border:1px solid var(--line);border-radius:3px;padding:14px;}
+.stat b{display:block;font-family:'Instrument Serif',serif;font-size:1.9rem;line-height:1;color:var(--navy);}
+.stat span{font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);}
+
+.ctrls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px;}
+select{font-family:inherit;font-size:.95rem;padding:11px 13px;background:#FCFBF8;
+  border:1px solid var(--line);border-radius:2px;color:var(--ink);outline:none;width:100%;}
+select:focus{border-color:var(--brass);box-shadow:0 0 0 3px rgba(200,164,92,.18);}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:3px;padding:20px;margin-bottom:18px;}
+.card .hint{color:var(--body);font-size:.87rem;margin:6px 0 0;}
+
+.pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px;}
+.pill{background:#F0EDE4;border:1px solid var(--line);border-radius:2px;padding:7px 12px;
+  font-size:.83rem;cursor:pointer;font-family:inherit;color:var(--body);}
+.pill:hover{background:#E6E1D4;}
+.pill.on{background:var(--navy);color:var(--cream);border-color:var(--navy);}
+
+.copybox{width:100%;min-height:120px;font-family:ui-monospace,Menlo,monospace;
+  font-size:.85rem;line-height:1.65;resize:vertical;background:#FCFBF8;margin-top:14px;
+  border:1px solid var(--line);border-radius:2px;padding:12px 14px;color:var(--ink);}
+
+table{width:100%;border-collapse:collapse;font-size:.87rem;background:#fff;}
+thead{background:#F0EDE4;color:var(--body);}
+th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--line);white-space:nowrap;}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:#FBFAF6;}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:3px;}
+td.act{text-align:right;}
+.x{background:none;border:1px solid var(--line);border-radius:2px;color:var(--danger);
+  cursor:pointer;font-family:inherit;font-size:.78rem;padding:5px 10px;}
+.x:hover{background:#FBEDEA;border-color:#E8C4BB;}
+.empty{text-align:center;color:var(--muted);padding:40px 20px;}
+.err{color:var(--danger);font-size:.86rem;margin:10px 0 0;}
+.danger-zone{border-color:#E8C4BB;background:#FDF6F4;}
+.danger-zone h2{color:var(--danger);}
+
+.btn-brass{background:var(--brass);color:var(--navy);}
+.btn-brass:hover{background:var(--brass-lit);}
+.btn-danger{background:var(--danger);color:#fff;}
+.btn-danger:hover{background:#98371F;}
+.btn-sm{padding:8px 14px;font-size:.85rem;}
+
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(14px);
+  background:var(--navy);color:var(--cream);padding:12px 22px;border-radius:3px;
+  font-size:.9rem;opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;z-index:60;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+.modal{position:fixed;inset:0;background:rgba(16,26,51,.6);display:none;
+  align-items:center;justify-content:center;padding:22px;z-index:70;}
+.modal.show{display:flex;}
+.modal .inner{background:#fff;border-radius:3px;padding:26px;max-width:400px;width:100%;}
+
+@media(max-width:560px){ .stats{grid-template-columns:1fr 1fr;} .ctrls > *{flex:1 1 100%;} }
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ LANDING ══════════ -->
+<section class="screen active" id="screen-home">
+  <div class="hero">
+    <div class="seal"><span>K</span></div>
+
+    <p class="est">Founded 2026 · West Valley College</p>
+
+    <h1 class="title serif">Circle K<em>International</em></h1>
+
+    <p class="college">A student service chapter</p>
+
+    <div class="divider"><i></i><b></b><i></i></div>
+
+    <ul class="points">
+      <li><i></i>Volunteer in and around San Jose</li>
+      <li><i></i>Lead real projects</li>
+      <li><i></i>Meet people who show up</li>
+    </ul>
+
+    <button class="enter" onclick="go('signup')">
+      Sign up
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <p class="founders">Ten founding members already in.</p>
+
+    <button class="officer-link" onclick="go('lock')">Officer access</button>
+  </div>
+</section>
+
+<!-- ══════════ SIGNUP ══════════ -->
+<section class="screen" id="screen-signup">
+  <div class="bar">
+    <div class="in">
+      <div class="seal-sm">K</div>
+      <div>
+        <div class="nm">Circle K International</div>
+        <div class="sub">West Valley College</div>
+      </div>
+      <button class="back" onclick="go('home')">← Back</button>
+    </div>
+  </div>
+
+  <div class="page">
+    <h1 class="h-lead serif">Join the chapter</h1>
+    <p class="p-lead">
+      Add your name and we'll send you the first meeting details. Takes about
+      a minute — the four fields at the top are all we need.
+    </p>
+
+    <div class="form-box">
+      <form id="form" novalidate>
+        <div class="two">
+          <div class="fld">
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" autocomplete="given-name">
+            <p class="err" id="err-firstName" hidden></p>
+          </div>
+          <div class="fld">
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" autocomplete="family-name">
+            <p class="err" id="err-lastName" hidden></p>
+          </div>
+        </div>
+
+        <div class="fld">
+          <label for="email">Email</label>
+          <input type="email" id="email" autocomplete="email" inputmode="email">
+          <p class="err" id="err-email" hidden></p>
+        </div>
+
+        <div class="fld">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" autocomplete="tel" inputmode="tel" placeholder="(555) 555-5555">
+          <p class="err" id="err-phone" hidden></p>
+        </div>
+
+        <div class="two">
+          <div class="fld">
+            <label for="studentId">Student ID <span class="op">(optional)</span></label>
+            <input type="text" id="studentId">
+          </div>
+          <div class="fld">
+            <label for="gradYear">Grad year <span class="op">(optional)</span></label>
+            <input type="text" id="gradYear" inputmode="numeric" placeholder="2027">
+          </div>
+        </div>
+
+        <div class="fld">
+          <label for="major">Major / program <span class="op">(optional)</span></label>
+          <input type="text" id="major">
+        </div>
+
+        <div class="fld">
+          <label for="interestReason">What interests you about Circle K? <span class="op">(optional)</span></label>
+          <textarea id="interestReason" rows="3"></textarea>
+        </div>
+
+        <div class="fld">
+          <label for="volunteerInterests">What kinds of volunteer work interest you? <span class="op">(optional)</span></label>
+          <textarea id="volunteerInterests" rows="3"></textarea>
+        </div>
+
+        <div class="fld chk">
+          <input type="checkbox" id="wantsUpdates">
+          <label for="wantsUpdates">Send me updates about Circle K at West Valley College.</label>
+        </div>
+
+        <p class="alert" id="submit-error" hidden></p>
+
+        <button type="submit" class="btn btn-main" id="submit-btn">Submit signup</button>
+      </form>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:14px;margin:44px 0 30px;color:var(--brass);">
+      <i style="flex:1;height:1px;background:var(--line);display:block;"></i>
+      <b style="width:4px;height:4px;background:var(--brass);transform:rotate(45deg);"></b>
+      <i style="flex:1;height:1px;background:var(--line);display:block;"></i>
+    </div>
+
+    <h2 class="h-lead serif" style="font-size:1.9rem;">About the chapter</h2>
+    <p class="p-lead" style="font-size:.96rem;">
+      Circle K is a student-led volunteer and community service organization,
+      sponsored by Kiwanis International. This chapter is brand new at West
+      Valley College — ten founding members are already on board.
+    </p>
+
+    <ul class="perks">
+      <li>
+        <span class="n">I</span>
+        <div><h3>Real service projects</h3>
+        <p>Hands-on volunteering in and around San Jose, planned and run by members.</p></div>
+      </li>
+      <li>
+        <span class="n">II</span>
+        <div><h3>Leadership from day one</h3>
+        <p>Officer roles and project leads are wide open — nothing is locked in yet.</p></div>
+      </li>
+      <li>
+        <span class="n">III</span>
+        <div><h3>A wider network</h3>
+        <p>Circle K chapters run at colleges worldwide, with regional events and conferences.</p></div>
+      </li>
+    </ul>
+
+    <div class="panel">
+      <div class="lab">First meeting</div>
+      <dl class="mgrid">
+        <div>
+          <dt>When</dt>
+          <dd>Fall 2026, second week<br>Sept 8–11 <span class="tbd">date tbd</span></dd>
+        </div>
+        <div>
+          <dt>Where</dt>
+          <dd>West Valley College<br>Room <span class="tbd">tbd</span></dd>
+        </div>
+      </dl>
+      <p class="note">We'll send the exact date, time, and room once they're confirmed.</p>
+    </div>
+
+  </div>
+
+  <div class="foot">
+    <div class="page" style="padding-top:0;padding-bottom:0;">
+      <p>Circle K International at West Valley College — a new chapter, founded by students.</p>
+      <p>Questions? Ask us at the first meeting.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONFIRMATION ══════════ -->
+<section class="screen" id="screen-done">
+  <div class="bar">
+    <div class="in">
+      <div class="seal-sm">K</div>
+      <div>
+        <div class="nm">Circle K International</div>
+        <div class="sub">West Valley College</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page done-wrap">
+    <div class="tick">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M5 12l4.5 4.5L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <h1 class="h-lead serif" style="margin-top:26px;">You're in</h1>
+    <p class="p-lead" style="max-width:42ch;margin-left:auto;margin-right:auto;">
+      Thanks for your interest in Circle K International at West Valley
+      College. We'll send you updates about our first meeting and upcoming
+      volunteer opportunities.
+    </p>
+
+    <div class="panel" style="margin-top:32px;text-align:left;">
+      <div class="lab">What happens next</div>
+      <dl class="mgrid">
+        <div>
+          <dt>When</dt>
+          <dd>Fall 2026, second week<br>Sept 8–11 <span class="tbd">date tbd</span></dd>
+        </div>
+        <div>
+          <dt>Where</dt>
+          <dd>West Valley College<br>Room <span class="tbd">tbd</span></dd>
+        </div>
+      </dl>
+      <p class="note">We'll email you as soon as the date, time, and room are confirmed.</p>
+    </div>
+
+    <button class="btn btn-ghost" onclick="go('home')">Back to start</button>
+  </div>
+</section>
+
+<!-- ══════ OFFICER LOGIN ══════ -->
+<section class="screen" id="screen-lock">
+  <div class="bar">
+    <div class="in">
+      <div class="seal-sm">K</div>
+      <div>
+        <div class="nm">Officer access</div>
+        <div class="sub">West Valley College</div>
+      </div>
+      <button class="back" onclick="go('home')">← Back</button>
+    </div>
+  </div>
+
+  <div class="page" style="max-width:400px;">
+    <h1 class="h-lead serif" style="font-size:1.9rem;">Members</h1>
+    <p class="p-lead">Enter the officer password to view signups.</p>
+
+    <div class="form-box" style="margin-top:22px;">
+      <form id="lock-form">
+        <div class="fld">
+          <label for="pw">Officer password</label>
+          <input type="password" id="pw" autocomplete="current-password">
+        </div>
+        <div class="fld chk">
+          <input type="checkbox" id="remember" checked>
+          <label for="remember">Stay unlocked on this device</label>
+        </div>
+        <p class="alert" id="lock-error" hidden></p>
+        <button type="submit" class="btn btn-main" id="lock-btn" style="width:100%;">Unlock</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ MEMBERS APP ══════ -->
+<section class="screen" id="screen-admin">
+  <div class="bar">
+    <div class="in">
+      <div class="seal-sm">K</div>
+      <div>
+        <div class="nm">Members</div>
+        <div class="sub">Circle K · West Valley</div>
+      </div>
+      <button class="back" id="lock-again">Lock</button>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <div class="in">
+      <button class="tab on" data-view="roster">Roster</button>
+      <button class="tab" data-view="contacts">Contact lists</button>
+      <button class="tab" data-view="settings">Settings</button>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="stats">
+      <div class="stat"><b id="st-total">0</b><span>Total</span></div>
+      <div class="stat"><b id="st-updates">0</b><span>Want updates</span></div>
+      <div class="stat"><b id="st-week">0</b><span>This week</span></div>
+    </div>
+
+    <!-- ROSTER -->
+    <div id="v-roster">
+      <div class="ctrls">
+        <input type="search" id="search" placeholder="Search name, email, phone, major…" style="flex:2 1 220px;">
+        <select id="segment" style="flex:1 1 160px;">
+          <option value="all">Everyone</option>
+          <option value="updates">Wants updates</option>
+          <option value="noupdates">Not on updates</option>
+        </select>
+        <button id="export" class="btn btn-ghost">Export CSV</button>
+      </div>
+      <p id="count" style="color:var(--muted);font-size:.87rem;margin:0 0 12px;">Loading…</p>
+      <p class="err" id="load-error" hidden></p>
+      <div class="tw">
+        <table>
+          <thead><tr>
+            <th>Joined</th><th>Name</th><th>Email</th><th>Phone</th>
+            <th>Major</th><th>Grad</th><th>Updates</th><th></th>
+          </tr></thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CONTACT LISTS -->
+    <div id="v-contacts" style="display:none;">
+      <div class="card">
+        <h2 class="serif" style="font-size:1.25rem;">Copy contact lists</h2>
+        <p class="hint">Pick who to include and what format, then paste straight into an email, a text, or a group chat.</p>
+
+        <div style="margin-top:18px;">
+          <label for="c-segment">Who to include</label>
+          <select id="c-segment">
+            <option value="updates">Only people who opted into updates</option>
+            <option value="all">Everyone who signed up</option>
+            <option value="noupdates">Only people NOT on updates</option>
+          </select>
+        </div>
+
+        <div class="pills" id="fmt-pills">
+          <button type="button" class="pill on" data-fmt="emails">Emails only</button>
+          <button type="button" class="pill" data-fmt="phones">Phones only</button>
+          <button type="button" class="pill" data-fmt="names">Names only</button>
+          <button type="button" class="pill" data-fmt="name-email">Name + email</button>
+          <button type="button" class="pill" data-fmt="full">Everything</button>
+        </div>
+
+        <div class="pills" id="sep-pills">
+          <button type="button" class="pill on" data-sep="comma">Commas</button>
+          <button type="button" class="pill" data-sep="semi">Semicolons</button>
+          <button type="button" class="pill" data-sep="line">One per line</button>
+        </div>
+
+        <textarea class="copybox" id="copybox" readonly></textarea>
+
+        <div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:12px;">
+          <button class="btn btn-brass" id="copy-btn">Copy to clipboard</button>
+          <span id="copy-count" style="align-self:center;color:var(--muted);font-size:.85rem;"></span>
+        </div>
+        <p class="hint" style="margin-top:12px;">
+          For a mass email, paste an email list into the <strong>BCC</strong> field
+          so members can't see each other's addresses.
+        </p>
+      </div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div id="v-settings" style="display:none;">
+      <div class="card">
+        <h2 class="serif" style="font-size:1.25rem;">Storage</h2>
+        <p class="hint">Signups are saved in your Google Sheet. Removing someone here deletes their row. The Sheet keeps version history, so a mistake can be undone from the Sheet itself (File → Version history).</p>
+        <div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;">
+          <button class="btn btn-ghost" id="export2">Export CSV backup</button>
+          <button class="btn btn-ghost" id="refresh">Refresh</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="serif" style="font-size:1.25rem;">Remove one person</h2>
+        <p class="hint">Use the Remove button on any row in the Roster tab — handy when someone drops out.</p>
+      </div>
+
+      <div class="card danger-zone">
+        <h2 class="serif" style="font-size:1.25rem;">Clear everything</h2>
+        <p class="hint">Deletes <strong>every</strong> signup — for a clean slate at the start of a semester. Export a CSV first.</p>
+        <button class="btn btn-danger" id="wipe-btn" style="margin-top:16px;">Delete all signups</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="toast" id="toast"></div>
+
+<div class="modal" id="modal">
+  <div class="inner">
+    <h2 class="serif" id="modal-title" style="font-size:1.3rem;">Are you sure?</h2>
+    <p id="modal-text" style="color:var(--body);font-size:.9rem;margin:10px 0 0;"></p>
+    <div id="modal-typebox" style="margin-top:16px;" hidden>
+      <label for="modal-input">Type <strong>DELETE ALL</strong> to confirm</label>
+      <input type="text" id="modal-input" autocomplete="off">
+    </div>
+    <div style="display:flex;gap:9px;margin-top:20px;justify-content:flex-end;">
+      <button class="btn btn-ghost btn-sm" id="modal-cancel">Cancel</button>
+      <button class="btn btn-danger btn-sm" id="modal-ok">Delete</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════
+   PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE.
+   You get this in Step 4 of the README (Deploy → Web app).
+   It looks like:
+   https://script.google.com/macros/s/AKfycb..../exec
+   ═══════════════════════════════════════════════════════════ */
+const API_URL = "PASTE_YOUR_WEB_APP_URL_HERE";
+/* ═══════════════════════════════════════════════════════════ */
+
+const configured = API_URL.indexOf("PASTE_YOUR") === -1 && API_URL.indexOf("script.google.com") !== -1;
+
+const $ = id => document.getElementById(id);
+let rows = [];
+let officerPw = "";
+let fmt = "emails";
+let sepKey = "comma";
+
+/* ── screens ── */
+function go(name){
+  document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+  const el = $("screen-" + name);
+  if(el) el.classList.add("active");
+  window.scrollTo(0,0);
+}
+
+/* ── backend call ──
+   Content-Type is text/plain on purpose: it keeps the browser from
+   sending a CORS preflight, which Apps Script doesn't answer. */
+async function api(payload){
+  if(!configured) throw new Error("not_configured");
+  const res = await fetch(API_URL, {
+    method: "POST",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(payload)
+  });
+  if(!res.ok) throw new Error("http_" + res.status);
+  return await res.json();
+}
+
+/* ══════ PUBLIC SIGNUP ══════ */
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const normPhone = s => s.replace(/[^\d+]/g,"");
+const goodPhone = s => { const d = s.replace(/\D/g,""); return d.length===10 || (d.length===11 && d.startsWith("1")); };
+const val = id => $(id).value.trim();
+
+function mark(id,msg){
+  const inp = $(id), el = $("err-"+id);
+  if(msg){ inp.classList.add("bad"); el.textContent = msg; el.hidden = false; }
+  else { inp.classList.remove("bad"); el.hidden = true; }
+}
+
+$("form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const first = val("firstName"), last = val("lastName");
+  const email = val("email"), phone = val("phone");
+  let ok = true;
+
+  mark("firstName", first ? "" : "Enter your first name."); if(!first) ok = false;
+  mark("lastName",  last  ? "" : "Enter your last name.");  if(!last)  ok = false;
+  if(!email){ mark("email","Enter your email."); ok = false; }
+  else if(!EMAIL_RE.test(email)){ mark("email","That email doesn't look right — check for typos."); ok = false; }
+  else mark("email","");
+  if(!phone){ mark("phone","Enter your phone number."); ok = false; }
+  else if(!goodPhone(phone)){ mark("phone","Enter a valid 10-digit phone number."); ok = false; }
+  else mark("phone","");
+
+  const errBox = $("submit-error");
+  errBox.hidden = true;
+  if(!ok){ document.querySelector("input.bad")?.focus(); return; }
+
+  if(!configured){
+    errBox.hidden = false;
+    errBox.textContent = "This site isn't connected to its storage yet. Paste your Apps Script web app URL near the bottom of this file.";
+    return;
+  }
+
+  const btn = $("submit-btn");
+  btn.disabled = true; btn.textContent = "Submitting…";
+
+  try{
+    const r = await api({
+      action: "signup",
+      first_name: first, last_name: last,
+      email: email.toLowerCase(), phone: normPhone(phone),
+      student_id: val("studentId"), major: val("major"),
+      grad_year: val("gradYear"), interest_reason: val("interestReason"),
+      volunteer_interests: val("volunteerInterests"),
+      wants_updates: $("wantsUpdates").checked
+    });
+    btn.disabled = false; btn.textContent = "Submit signup";
+
+    if(!r.ok){
+      errBox.hidden = false;
+      errBox.textContent = r.error === "duplicate"
+        ? "That email is already signed up. Try a different email, or find us at the first meeting."
+        : "Something went wrong submitting your signup. Please try again in a moment.";
+      return;
+    }
+    $("form").reset();
+    go("done");
+  }catch(err){
+    btn.disabled = false; btn.textContent = "Submit signup";
+    errBox.hidden = false;
+    errBox.textContent = "Couldn't reach the server. Check your internet connection and try again.";
+  }
+});
+
+/* ══════ OFFICER UNLOCK ══════ */
+$("lock-form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const err = $("lock-error");
+  err.hidden = true;
+  const pw = $("pw").value;
+  if(!pw){ err.hidden=false; err.textContent="Enter the officer password."; return; }
+  if(!configured){
+    err.hidden=false;
+    err.textContent="Not connected to storage yet. Paste your Apps Script web app URL near the bottom of this file.";
+    return;
+  }
+
+  const btn = $("lock-btn");
+  btn.disabled = true; btn.textContent = "Checking…";
+  try{
+    const r = await api({ action:"list", password: pw });
+    btn.disabled = false; btn.textContent = "Unlock";
+    if(!r.ok){
+      err.hidden = false;
+      err.textContent = r.error === "bad_password"
+        ? "That password isn't right."
+        : "Couldn't load the member list. Try again.";
+      return;
+    }
+    officerPw = pw;
+    if($("remember").checked){
+      try{ sessionStorage.setItem("ck_pw", pw); }catch(e2){}
+    }
+    rows = r.rows || [];
+    $("pw").value = "";
+    go("admin");
+    refreshUI();
+  }catch(err2){
+    btn.disabled = false; btn.textContent = "Unlock";
+    err.hidden = false;
+    err.textContent = "Couldn't reach the server. Check your internet connection.";
+  }
+});
+
+$("lock-again").addEventListener("click", () => {
+  officerPw = ""; rows = [];
+  try{ sessionStorage.removeItem("ck_pw"); }catch(e){}
+  go("home");
+});
+
+/* ══════ MEMBERS APP ══════ */
+const safe = s => { const d=document.createElement("div"); d.textContent = s ?? ""; return d.innerHTML; };
+const escCsv = v => { const s = String(v ?? ""); return /[",\n]/.test(s) ? '"'+s.replace(/"/g,'""')+'"' : s; };
+
+function prettyPhone(p){
+  const d = String(p||"").replace(/\D/g,"");
+  if(d.length === 11 && d.charAt(0) === "1") return "("+d.slice(1,4)+") "+d.slice(4,7)+"-"+d.slice(7);
+  if(d.length === 10) return "("+d.slice(0,3)+") "+d.slice(3,6)+"-"+d.slice(6);
+  return p || "";
+}
+
+function toast(msg){
+  const t = $("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(t._t); t._t = setTimeout(()=>t.classList.remove("show"), 2400);
+}
+
+function bySegment(list, seg){
+  if(seg === "updates")   return list.filter(r => r.wants_updates);
+  if(seg === "noupdates") return list.filter(r => !r.wants_updates);
+  return list;
+}
+
+function rosterRows(){
+  const q = $("search").value.trim().toLowerCase();
+  let list = bySegment(rows, $("segment").value);
+  if(q){
+    list = list.filter(r => [r.first_name,r.last_name,r.email,r.phone,r.student_id,r.major]
+      .filter(Boolean).join(" ").toLowerCase().indexOf(q) !== -1);
+  }
+  return list;
+}
+
+function stats(){
+  $("st-total").textContent = rows.length;
+  $("st-updates").textContent = rows.filter(r=>r.wants_updates).length;
+  const weekAgo = Date.now() - 7*24*60*60*1000;
+  $("st-week").textContent = rows.filter(r => new Date(r.created_at).getTime() >= weekAgo).length;
+}
+
+function renderRoster(){
+  const list = rosterRows();
+  $("count").textContent = list.length + " of " + rows.length + " shown";
+  const b = $("tbody");
+  if(list.length === 0){
+    b.innerHTML = '<tr><td colspan="8"><div class="empty">'+
+      (rows.length === 0 ? "No signups yet. They'll appear here as students sign up."
+                         : "Nobody matches this search or filter.")+'</div></td></tr>';
+    return;
+  }
+  b.innerHTML = list.map(r => '<tr>'+
+    '<td style="color:var(--muted);">'+(r.created_at ? new Date(r.created_at).toLocaleDateString() : "—")+'</td>'+
+    '<td>'+safe(r.first_name)+' '+safe(r.last_name)+'</td>'+
+    '<td>'+safe(r.email)+'</td>'+
+    '<td>'+safe(prettyPhone(r.phone))+'</td>'+
+    '<td>'+(safe(r.major) || "—")+'</td>'+
+    '<td>'+(safe(r.grad_year) || "—")+'</td>'+
+    '<td>'+(r.wants_updates ? "Yes" : "No")+'</td>'+
+    '<td class="act"><button class="x" data-del="'+safe(r.id)+'">Remove</button></td>'+
+  '</tr>').join("");
+}
+
+function buildList(){
+  const list = bySegment(rows, $("c-segment").value);
+  const sep = sepKey === "line" ? "\n" : (sepKey === "semi" ? "; " : ", ");
+  let out = "";
+  if(fmt === "emails")     out = list.map(r=>r.email).filter(Boolean).join(sep);
+  else if(fmt === "phones") out = list.map(r=>prettyPhone(r.phone)).filter(Boolean).join(sep);
+  else if(fmt === "names")  out = list.map(r=>(r.first_name+" "+r.last_name).trim()).join(sep);
+  else if(fmt === "name-email") out = list.map(r=>r.first_name+" "+r.last_name+" <"+r.email+">").join(sep);
+  else if(fmt === "full")   out = list.map(r=>
+      r.first_name+" "+r.last_name+"\n  Email: "+r.email+"\n  Phone: "+prettyPhone(r.phone)+
+      (r.major ? "\n  Major: "+r.major : "")+(r.grad_year ? "\n  Grad: "+r.grad_year : "")
+    ).join("\n\n");
+  $("copybox").value = out;
+  $("copy-count").textContent = list.length === 0 ? "Nobody in this group yet."
+    : list.length + (list.length === 1 ? " person" : " people");
+}
+
+const COLS = [
+  ["created_at","Signed up"],["first_name","First name"],["last_name","Last name"],
+  ["email","Email"],["phone","Phone"],["student_id","Student ID"],["major","Major"],
+  ["grad_year","Grad year"],["interest_reason","Interest"],
+  ["volunteer_interests","Volunteer interests"],["wants_updates","Wants updates"]
+];
+const cellVal = (k,v) => k==="wants_updates" ? (v?"Yes":"No")
+  : (k==="created_at"&&v) ? new Date(v).toLocaleString() : (v ?? "");
+
+function downloadCsv(list){
+  if(list.length === 0){ toast("Nothing to export."); return; }
+  const csv = COLS.map(c=>escCsv(c[1])).join(",")+"\n"+
+    list.map(r=>COLS.map(c=>escCsv(cellVal(c[0], r[c[0]]))).join(",")).join("\n");
+  const blob = new Blob([csv], {type:"text/csv;charset=utf-8;"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = "cki-west-valley-"+new Date().toISOString().slice(0,10)+".csv";
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  toast("CSV downloaded.");
+}
+
+function refreshUI(){ stats(); renderRoster(); buildList(); }
+
+async function reload(){
+  try{
+    const r = await api({ action:"list", password: officerPw });
+    if(!r.ok){ toast("Couldn't refresh."); return; }
+    rows = r.rows || [];
+    refreshUI();
+  }catch(e){ toast("Couldn't reach the server."); }
+}
+
+/* ── confirm modal ── */
+let pendingAction = null;
+function askConfirm(title, text, needsType, action){
+  $("modal-title").textContent = title;
+  $("modal-text").textContent = text;
+  $("modal-typebox").hidden = !needsType;
+  $("modal-input").value = "";
+  $("modal-ok").disabled = needsType;
+  pendingAction = action;
+  $("modal").classList.add("show");
+}
+function closeModal(){ $("modal").classList.remove("show"); pendingAction = null; }
+$("modal-cancel").addEventListener("click", closeModal);
+$("modal").addEventListener("click", e => { if(e.target === $("modal")) closeModal(); });
+$("modal-input").addEventListener("input", e => {
+  $("modal-ok").disabled = e.target.value.trim().toUpperCase() !== "DELETE ALL";
+});
+$("modal-ok").addEventListener("click", async () => {
+  const act = pendingAction; closeModal();
+  if(act) await act();
+});
+
+/* ── deletes ── */
+function removeOne(id){
+  const person = rows.filter(r=>String(r.id)===String(id))[0];
+  const who = person ? (person.first_name+" "+person.last_name) : "this person";
+  askConfirm("Remove "+who+"?", "This deletes their row from the Sheet.", false, async ()=>{
+    try{
+      const r = await api({ action:"delete", password: officerPw, id: id });
+      if(!r.ok){ toast("Couldn't remove them."); return; }
+      rows = rows.filter(x=>String(x.id)!==String(id));
+      refreshUI(); toast("Removed.");
+    }catch(e){ toast("Couldn't reach the server."); }
+  });
+}
+
+function wipeAll(){
+  if(rows.length === 0){ toast("There's nothing to delete."); return; }
+  askConfirm("Delete all "+rows.length+" signups?",
+    "This erases every signup. Export a CSV first if you might need this list.",
+    true, async ()=>{
+      try{
+        const r = await api({ action:"deleteAll", password: officerPw });
+        if(!r.ok){ toast("Couldn't delete."); return; }
+        rows = []; refreshUI(); toast("All signups deleted.");
+      }catch(e){ toast("Couldn't reach the server."); }
+    });
+}
+
+/* ── events ── */
+$("tbody").addEventListener("click", e => {
+  const btn = e.target.closest("[data-del]");
+  if(btn) removeOne(btn.getAttribute("data-del"));
+});
+$("search").addEventListener("input", renderRoster);
+$("segment").addEventListener("change", renderRoster);
+$("c-segment").addEventListener("change", buildList);
+$("export").addEventListener("click", ()=>downloadCsv(rosterRows()));
+$("export2").addEventListener("click", ()=>downloadCsv(rows));
+$("refresh").addEventListener("click", async ()=>{ await reload(); toast("Refreshed."); });
+$("wipe-btn").addEventListener("click", wipeAll);
+
+document.querySelectorAll("#fmt-pills .pill").forEach(p => {
+  p.addEventListener("click", ()=>{
+    document.querySelectorAll("#fmt-pills .pill").forEach(x=>x.classList.remove("on"));
+    p.classList.add("on");
+    fmt = p.getAttribute("data-fmt");
+    $("sep-pills").style.display = fmt === "full" ? "none" : "flex";
+    buildList();
+  });
+});
+document.querySelectorAll("#sep-pills .pill").forEach(p => {
+  p.addEventListener("click", ()=>{
+    document.querySelectorAll("#sep-pills .pill").forEach(x=>x.classList.remove("on"));
+    p.classList.add("on");
+    sepKey = p.getAttribute("data-sep");
+    buildList();
+  });
+});
+
+$("copy-btn").addEventListener("click", async ()=>{
+  const text = $("copybox").value;
+  if(!text){ toast("Nothing to copy."); return; }
+  try{
+    await navigator.clipboard.writeText(text);
+    toast("Copied.");
+  }catch(err){
+    const ta = $("copybox");
+    ta.removeAttribute("readonly");
+    ta.select(); ta.setSelectionRange(0, 999999);
+    const worked = document.execCommand && document.execCommand("copy");
+    ta.setAttribute("readonly","");
+    toast(worked ? "Copied." : "Couldn't copy automatically — select the text and copy manually.");
+  }
+});
+
+document.querySelectorAll(".tab").forEach(t => {
+  t.addEventListener("click", ()=>{
+    document.querySelectorAll(".tab").forEach(x=>x.classList.remove("on"));
+    t.classList.add("on");
+    const v = t.getAttribute("data-view");
+    $("v-roster").style.display   = v === "roster"   ? "block" : "none";
+    $("v-contacts").style.display = v === "contacts" ? "block" : "none";
+    $("v-settings").style.display = v === "settings" ? "block" : "none";
+    if(v === "contacts") buildList();
+  });
+});
+
+/* ── resume an unlocked session (this browser tab only) ── */
+(function(){
+  let saved = null;
+  try{ saved = sessionStorage.getItem("ck_pw"); }catch(e){}
+  if(saved && configured){
+    officerPw = saved;
+    api({ action:"list", password: saved }).then(r => {
+      if(r && r.ok){ rows = r.rows || []; go("admin"); refreshUI(); }
+      else { officerPw = ""; try{ sessionStorage.removeItem("ck_pw"); }catch(e){} }
+    }).catch(()=>{ officerPw = ""; });
+  }
+})();
+
+/* test hook */
+window.__seed = d => { rows = d; go("admin"); refreshUI(); };
+</script>
+
+</body>
+</html>
